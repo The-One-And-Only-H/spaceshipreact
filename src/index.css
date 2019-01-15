@@ -29,3 +29,17 @@ body {
   background-color: white;
   position: absolute;
 }
+
+.spaceship {
+  position: fixed;
+  top: calc(50% - 50px);
+  left: 10px;
+  width: 100px;
+  height: 100px;
+  transform: rotate(90deg);
+}
+
+.spaceship img {
+  display: block;
+  max-width: 100%;
+}

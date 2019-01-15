@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Stars from './Stars';
+import Star from './Star';
+import Spaceship from './Spaceship';
 
 class App extends Component {
   render() {
     var stars = [];
     for (var i = 0; i < 50; i++) {
-      stars.push(<Stars />);
+      stars.push(<Star />);
     }
-    return <div>{stars}</div>;
+    return <div>{stars}<Spaceship /></div>;
   }
 }
 

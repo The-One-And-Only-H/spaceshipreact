@@ -5,7 +5,7 @@ let width = window.innerWidth;
 let height = window.innerHeight
 let particles = [];
 
-export default class Stars extends Component {
+export default class Star extends Component {
   constructor() {
     super()
     this.speed = Math.random() * 5;
