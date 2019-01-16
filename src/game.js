@@ -94,3 +94,17 @@ function updateGameArea() {
     myGamePiece.newPos();
     myGamePiece.update();
 }
+
+// score
+let score;
+
+class Score {
+  constructor() {
+    this.element = document.createElement("div");
+    this.element.classList.add("score");
+    document.body.appendChild(this.element);
+  }
+}
+
+score = new Score();
+console.log(score);
