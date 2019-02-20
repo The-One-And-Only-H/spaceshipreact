@@ -3,11 +3,11 @@ import spaceshipimg from "./spaceship.png";
 
 export default class Spaceship extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       left: 50,
       top: 400
-    }
+    };
   }
   componentDidMount() {
     window.addEventListener('keydown', (e) => {
