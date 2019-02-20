@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 
 // stars
-let width = window.innerWidth;
-let height = window.innerHeight
-let particles = [];
+const width = window.innerWidth;
+const height = window.innerHeight;
 
 export default class Star extends Component {
   constructor() {
