@@ -34,5 +34,12 @@ export default class Star extends Component {
     this.move();
     window.requestAnimationFrame(this.animate);
   };
+
+  render() {
+    var style = {
+      right: `${this.state.x}px`,
+      top: `${this.state.y}px`
+    };
+    return <div className="particle" style={style} />;
   }
 }
