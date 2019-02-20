@@ -10,24 +10,24 @@ export default class Spaceship extends Component {
     };
   }
   componentDidMount() {
-    window.addEventListener('keydown', (e) => {
-      if (e.key == "ArrowDown") {
-        var top = this.state.top + 5;
-        this.setState({top});
+    window.addEventListener("keydown", e => {
+      switch (e.key) {
+        case "ArrowDown":
+          return this.setState({ top: this.state.top + 5 });
+
+        case "ArrowLeft":
+          return this.setState({ left: this.state.left - 5 });
+
+        case "ArrowUp":
+          return this.setState({ top: this.state.top - 5 });
+
+        case "ArrowRight":
+          return this.setState({ left: this.state.left + 5 });
+
+        default:
+          return this.state;
       }
-      if (e.key == "ArrowLeft") {
-        var left = this.state.left - 5;
-        this.setState({left});
-      }
-      if (e.key == "ArrowUp") {
-        var top = this.state.top - 5;
-        this.setState({top});
-      }
-      if (e.key == "ArrowRight") {
-        var left = this.state.left + 5;
-        this.setState({left});
-      }
-    })
+    });
   }
   render() {
     var style = {
