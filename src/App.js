@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Star from './Star';
-import Spaceship from './Spaceship';
+import React, { Component } from "react";
+import "./App.css";
+import Star from "./Star";
+import Spaceship from "./Spaceship";
 
 class App extends Component {
   render() {

@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import spaceshipimg from './spaceship.png';
+import React, { Component } from "react";
+import spaceshipimg from "./spaceship.png";
 
 export default class Spaceship extends Component {
   constructor() {
@@ -33,7 +33,11 @@ export default class Spaceship extends Component {
     var style = {
       left: `${this.state.left}px`,
       top: `${this.state.top}px`
-    }
-    return <div className='spaceship' style={style}><img src={spaceshipimg} /></div>;
+    };
+    return (
+      <div className="spaceship" style={style}>
+        <img src={spaceshipimg} alt="spaceship" />
+      </div>
+    );
   }
 }

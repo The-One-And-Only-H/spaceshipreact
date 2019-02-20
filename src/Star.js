@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 // stars
 let width = window.innerWidth;
@@ -31,8 +31,8 @@ componentDidMount() {
     if (x > width) {
       x = 0;
     }
-    this.setState({x})
-  }
+    this.setState({ x });
+  };
 
   animate() {
     this.move()
