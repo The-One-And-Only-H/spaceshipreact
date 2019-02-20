@@ -5,8 +5,9 @@ const width = window.innerWidth;
 const height = window.innerHeight;
 
 export default class Star extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props);
+
     this.speed = Math.random() * 5;
     this.state = {
       x: Math.random() * width,
