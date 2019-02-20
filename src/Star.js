@@ -18,14 +18,11 @@ export default class Star extends Component {
     // this.animate = this.animate.bind(this);
   }
 
-  render() {
-    var style = {
-      right: `${this.state.x}px`,
-      top: `${this.state.y}px`
-    };
-    return <div className='particle' style={style}></div>;
+  componentDidMount() {
+    window.requestAnimationFrame(this.animate);
   }
-  move() {
+
+  move = () => {
     var x = this.state.x + this.speed;
     if (x > width) {
       x = 0;
