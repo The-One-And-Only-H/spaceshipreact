@@ -14,9 +14,9 @@ export default class Star extends Component {
       y: Math.random() * height
     };
 
-componentDidMount() {
-  window.requestAnimationFrame(() => this.animate());
-}
+    // this.move = this.move.bind(this);
+    // this.animate = this.animate.bind(this);
+  }
 
   render() {
     var style = {
