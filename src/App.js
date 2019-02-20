@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     var stars = [];
     for (var i = 0; i < 50; i++) {
-      stars.push(<Star />);
+      stars.push(<Star key={i} />);
     }
     return (
       <div>
