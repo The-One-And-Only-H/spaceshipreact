@@ -30,8 +30,9 @@ export default class Star extends Component {
     this.setState({ x });
   };
 
-  animate() {
-    this.move()
-    window.requestAnimationFrame(() => this.animate());
+  animate = () => {
+    this.move();
+    window.requestAnimationFrame(this.animate);
+  };
   }
 }
