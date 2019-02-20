@@ -12,8 +12,7 @@ export default class Star extends Component {
     this.state = {
       x: Math.random() * width,
       y: Math.random() * height
-    }
-  }
+    };
 
 componentDidMount() {
   window.requestAnimationFrame(() => this.animate());
