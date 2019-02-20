@@ -9,7 +9,12 @@ class App extends Component {
     for (var i = 0; i < 50; i++) {
       stars.push(<Star />);
     }
-    return <div>{stars}<Spaceship /></div>;
+    return (
+      <div>
+        {stars}
+        <Spaceship />
+      </div>
+    );
   }
 }
 
