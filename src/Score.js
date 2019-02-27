@@ -1,24 +1,28 @@
 import React, { Component } from "react";
 
-// score
-class Score {
-  constructor() {
-    this.element = document.createElement("div");
-    this.element.classList.add("score");
-    document.body.appendChild(this.element);
-    this.counter = 0;
-    this.element.innerHTML = this.counter;
+export default class Score extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      score: 0
+    };
   }
-  increaseScore(n) {
-    this.counter += n;
-    this.element.innerHTML = this.counter;
+
+  increaseScore() {
+    this.setState({ score: this.state.score + 1 });
+  }
+
+  render() {
+    return <div className="score">{this.state.score}</div>;
+  }
+
+  componentDidMount() {
+    setInterval(() => {
+      this.increaseScore();
+    }, 2000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.state.score);
   }
 }
-
-let score = new Score();
-
-setInterval(
-  function () {
-    score.increaseScore(1);
-  }, 2000
-)

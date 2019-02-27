@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import Star from "./Star";
 import Spaceship from "./Spaceship";
+import Score from "./Score";
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
       <div>
         {stars}
         <Spaceship />
+        <Score />
       </div>
     );
   }

@@ -43,3 +43,12 @@ body {
   display: block;
   max-width: 100%;
 }
+
+.score {
+  position: absolute;
+  right: 0;
+  font-size: 50px;
+  font-family: "Retro Computer";
+  src: url(./retro_computer_personal_use.ttf) format(tff);
+  color: white;
+}
