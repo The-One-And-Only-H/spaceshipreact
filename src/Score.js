@@ -3,13 +3,14 @@ import React, { Component } from "react";
 export default class Score extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       score: 0
     };
   }
 
   increaseScore() {
-    this.setState({ score: this.state.score + 1 });
+    this.setState(state => ({ score: state.score + 1 }));
   }
 
   render() {

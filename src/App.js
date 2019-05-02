@@ -3,6 +3,7 @@ import "./App.css";
 import Star from "./Star";
 import Spaceship from "./Spaceship";
 import Score from "./Score";
+import Astronaut from "./Astronaut";
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
         {stars}
         <Spaceship />
         <Score />
+        <Astronaut />
       </div>
     );
   }
