@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import astronautimg from "./astronaut.png";
+import React, { Component } from 'react';
+import astronautimg from './astronaut.png';
 
 // astronaut
 const width = window.innerWidth;
@@ -13,7 +13,7 @@ export default class Astronaut extends Component {
 
     this.state = {
       x: Math.random() * width,
-      y: Math.random() * height
+      y: Math.random() * height,
     };
   }
 
@@ -37,13 +37,11 @@ export default class Astronaut extends Component {
   render() {
     var style = {
       right: `${this.state.x}px`,
-      top: `${this.state.y}px`
+      top: `${this.state.y}px`,
     };
     return (
       <>
-        <div className="astronaut" style={style}>
-          {/* <img src={astronautimg} alt="astronaut" /> */}
-        </div>
+        <img className="astronaut" style={style} src={astronautimg} alt="astronaut" />
       </>
     );
   }
