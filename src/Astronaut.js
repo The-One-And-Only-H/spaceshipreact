@@ -9,7 +9,7 @@ export default class Astronaut extends Component {
   constructor(props) {
     super(props);
 
-    this.speed = Math.random() * 1;
+    this.speed = Math.random() * 8;
 
     this.state = {
       x: Math.random() * width,

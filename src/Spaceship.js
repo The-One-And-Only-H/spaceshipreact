@@ -1,27 +1,28 @@
-import React, { Component } from "react";
-import spaceshipimg from "./spaceship.png";
+import React, { Component } from 'react';
+import spaceshipimg from './spaceship.png';
 
 export default class Spaceship extends Component {
   constructor() {
     super();
     this.state = {
-      left: 50,
-      top: 400
+      left: 25,
+      top: 250,
     };
   }
+
   componentDidMount() {
-    window.addEventListener("keydown", e => {
+    window.addEventListener('keydown', (e) => {
       switch (e.key) {
-        case "ArrowDown":
+        case 'ArrowDown':
           return this.setState({ top: this.state.top + 10 });
 
-        case "ArrowLeft":
+        case 'ArrowLeft':
           return this.setState({ left: this.state.left - 10 });
 
-        case "ArrowUp":
+        case 'ArrowUp':
           return this.setState({ top: this.state.top - 10 });
 
-        case "ArrowRight":
+        case 'ArrowRight':
           return this.setState({ left: this.state.left + 10 });
 
         default:
@@ -29,10 +30,11 @@ export default class Spaceship extends Component {
       }
     });
   }
+
   render() {
-    var style = {
+    const style = {
       left: `${this.state.left}px`,
-      top: `${this.state.top}px`
+      top: `${this.state.top}px`,
     };
     return (
       <div className="spaceship" style={style}>

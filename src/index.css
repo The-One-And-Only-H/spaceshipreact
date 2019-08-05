@@ -32,11 +32,8 @@ body {
 
 .spaceship {
   position: fixed;
-  top: calc(50% - 50px);
-  left: 10px;
-  width: 100px;
-  height: 100px;
-  transform: rotate(90deg);
+  width: 200px;
+  height: 200px;
 }
 
 .spaceship img {
@@ -57,11 +54,35 @@ body {
   animation: spin 4s linear infinite;
 }
 
+@font-face {
+  font-family: Retro Computer;
+  src: url(./retro_computer_personal_use.ttf) format('truetype');
+}
+
 .score {
   position: absolute;
   right: 0;
   font-size: 50px;
-  font-family: "Retro Computer";
-  src: url(./retro_computer_personal_use.ttf) format(tff);
+  font-family: Retro Computer;
   color: white;
 }
+
+@keyframes appear {
+  0% {
+      opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
+.Logo {
+  width: 100%;
+  fill: white;
+  z-index: 1000;
+  animation: appear 4s linear forwards;
+}
+
