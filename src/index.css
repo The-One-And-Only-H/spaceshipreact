@@ -84,5 +84,8 @@ body {
   fill: white;
   z-index: 1000;
   animation: appear 4s linear forwards;
+  margin: 0;
+  position: absolute;
+  top: 265px;
 }
 
