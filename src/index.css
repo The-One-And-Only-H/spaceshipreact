@@ -61,7 +61,7 @@ body {
 
 .score {
   position: absolute;
-  right: 0;
+  right: 15px;
   font-size: 50px;
   font-family: Retro Computer;
   color: white;
@@ -82,10 +82,10 @@ body {
 .Logo {
   width: 100%;
   fill: white;
-  z-index: 1000;
   animation: appear 4s linear forwards;
   margin: 0;
   position: absolute;
   top: 265px;
+  z-index: 100;
 }
 
