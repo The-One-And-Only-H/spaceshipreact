@@ -9,7 +9,7 @@ export default class Astronaut extends Component {
   constructor(props) {
     super(props);
 
-    this.speed = Math.random() * 2;
+    this.speed = Math.random() * 1;
 
     this.state = {
       x: Math.random() * width,
@@ -42,7 +42,7 @@ export default class Astronaut extends Component {
     return (
       <>
         <div className="astronaut" style={style}>
-          <img src={astronautimg} alt="astronaut" />
+          {/* <img src={astronautimg} alt="astronaut" /> */}
         </div>
       </>
     );

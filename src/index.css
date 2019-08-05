@@ -50,8 +50,10 @@ body {
   } 
 }
 
-.astronaut img {
+.astronaut  {
   width: 30px;
+  height: 30px;
+  background-color: red;
   position: absolute;
   animation: spin 4s linear infinite;
 }

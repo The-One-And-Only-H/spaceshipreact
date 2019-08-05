@@ -11,12 +11,18 @@ class App extends Component {
     for (var i = 0; i < 50; i++) {
       stars.push(<Star key={i} />);
     }
+
+    var astronauts = [];
+    for (var i = 0; i < 10; i++) {
+      astronauts.push(<Astronaut key={i} />);
+    }
+
     return (
       <div>
+        {astronauts}
         {stars}
         <Spaceship />
         <Score />
-        <Astronaut />
       </div>
     );
   }

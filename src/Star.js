@@ -9,6 +9,7 @@ export default class Star extends Component {
     super(props);
 
     this.speed = Math.random() * 5;
+
     this.state = {
       x: Math.random() * width,
       y: Math.random() * height
