@@ -6,12 +6,11 @@ import Spaceship from './Spaceship';
 import Score from './Score';
 import Astronaut from './Astronaut';
 
-// if x>left && x<right && y<top && y>bottom
-
-// 1) a periodic timer
-// 2) getting the extremes of the ship box
-// 3) getting the position of one or of all the astronauts
-// 4) doing something if you detect a hit
+// To do
+// - increment the score only when the player has interacted with specific items in the game
+// - decrement the score when the players has interacted with other items in the game
+// - create an intro and outright sequence
+// - detect the right key for when the player fires and subsequently the result of what happens when that interacts with an item
 
 class App extends Component {
   render() {
@@ -24,6 +23,8 @@ class App extends Component {
     for (let z = 0; z < 5; z++) {
       astronauts.push(<Astronaut key={z} />);
     }
+
+    // if x>left && x<right && y<top && y>bottom
 
     // const bodyRect = document.Spaceship.getBoundingClientRect();
 
