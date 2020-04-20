@@ -1,11 +1,20 @@
 # spaceshipreact
+
 Exactly the same as my spaceship repo, but with React.
 
 Tech stack:
+
 - HTML5
 - CSS3
 - JavaScript
 - React
+
+# to do
+
+- increment the score only when the player has interacted with specific items in the game
+- decrement the score when the players has interacted with other items in the game
+- create an intro and outright sequence
+- detect the right key for when the player fires and subsequently the result of what happens when that interacts with an item
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

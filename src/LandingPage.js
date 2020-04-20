@@ -11,7 +11,7 @@ export default class LandingPage extends Component {
   render() {
     return (
       <>
-        <NBLogo className="Logo" ariaLabel="Logo" />
+        <NBLogo className="Logo" aria-label="Logo" />
       </>
     );
   }
