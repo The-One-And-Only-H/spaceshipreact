@@ -7,12 +7,45 @@ import Score from './Score';
 import Astronaut from './Astronaut';
 
 // To do
-// - increment the score only when the player has interacted with specific items in the game
-// - decrement the score when the players has interacted with other items in the game
+// - increment the timer only when the player has interacted with specific items in the game
+// - decrement the timer when the players has interacted with other items in the game
 // - create an intro and outright sequence
 // - detect the right key for when the player fires and subsequently the result of what happens when that interacts with an item
 
 class App extends Component {
+  detectCollision() {
+    const ship = document.getElementsByClassName('spaceship');
+    if (ship.length === 0) {
+    }
+    const shipRect = ship[0].getBoundingClientRect();
+    console.log('ship:', shipRect);
+
+    const astro = document.getElementsByClassName('astronaut');
+    for (let y = 0; y < 1; y++) {
+      const astroRect = astro[y].getBoundingClientRect();
+      console.log('astro:', astroRect);
+      if (
+        astroRect.x > shipRect.left
+        && astroRect.x < shipRect.right
+        && astroRect.y > shipRect.top
+        && astroRect.y < shipRect.bottom
+      ) {
+        // return <Astronaut style="display: none" />;
+        console.log('hit');
+      }
+    }
+  }
+
+  componentDidMount() {
+    setInterval(() => {
+      this.detectCollision();
+    }, 2000);
+  }
+
+  componentWillUnmount() {
+    clearInterval();
+  }
+
   render() {
     const stars = [];
     for (let i = 0; i < 50; i++) {
@@ -20,26 +53,18 @@ class App extends Component {
     }
 
     const astronauts = [];
-    for (let z = 0; z < 5; z++) {
+    for (let z = 0; z < 1; z++) {
       astronauts.push(<Astronaut key={z} />);
     }
-
-    // if x>left && x<right && y<top && y>bottom
-
-    // const bodyRect = document.Spaceship.getBoundingClientRect();
-
-    // const elemRect = Astronaut.getBoundingClientRect();
-
-    // const offset = elemRect.top - bodyRect.top;
-
-    // console.log(`Element is ${offset} vertical pixels from <body>`);
 
     return (
       <div>
         <LandingPage />
+        {/* {elemRect.top - bodyRect.top !== 0 ? <div className="astro">{astronauts}</div> : null} */}
+        {/* <div className="astronaut">{astronauts}</div> */}
         {astronauts}
         {stars}
-        <Spaceship />
+        <Spaceship className="spaceship" />
         <Score />
       </div>
     );

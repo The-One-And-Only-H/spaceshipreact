@@ -39,7 +39,7 @@ export default class Astronaut extends Component {
       right: `${this.state.x}px`,
       top: `${this.state.y}px`,
     };
-    console.log('astronaut', 'right:', this.state.x, 'top:', this.state.y);
+    // console.log('astronaut', 'right:', this.state.x, 'top:', this.state.y);
 
     return (
       <>

@@ -42,7 +42,7 @@ export default class Spaceship extends Component {
       left: `${this.state.left}px`,
       top: `${this.state.top}px`,
     };
-    console.log('spaceship', 'left:', this.state.left, 'top:', this.state.top);
+    // console.log('spaceship', 'left:', this.state.left, 'top:', this.state.top);
 
     return (
       <div className="spaceship" style={style}>
