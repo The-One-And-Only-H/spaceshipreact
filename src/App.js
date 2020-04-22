@@ -13,48 +13,11 @@ import spaceshipFireAccelerationimg from './spaceshipFireAcceleration.png';
 // Astronaut image
 import astronautimg from './astronaut.png';
 
-// To do
-// - increment the timer only when the player has interacted with specific items in the game
-// - decrement the timer when the players has interacted with other items in the game
-// - create an intro and outright sequence
-// - detect the right key for when the player fires and subsequently the result of what happens when that interacts with an item
-
-// Next steps
-// - You should put the ship, the astronauts, and the score in the state of the App component
-//
-// class App extends Component {
-//   constructor(props) {
-//     super(props);
-//     const astronauts = [];
-//     for (var i = 0; i < 5; i++) {
-//       astronauts.push(<Astronaut key={i} />);
-//     }
-//     this.state = {
-//       ship: (<Spaceship />),
-//       score: (<Score />),
-//       astronauts: astronauts
-//     };
-//   }
-//
-// OR
-//
-// render() {
-//   const stars = [];
-//   for (var i = 0; i < 50; i++) {
-//     stars.push(<Star key={i} />);
-//   }
-//   return (
-//     <div>
-//       <LandingPage />
-//       {this.astronauts}
-//       {stars}
-//       {this.spaceship}
-//       {this.score}
-//     </div>
-//   );
-// }
-//
-// - See rest of notes in chat
+// TO DO:
+// - Increment the score only when the player has interacted with specific items in the game
+// - Decrement the score when the players has interacted with other items in the game
+// - Create an intro and outright sequence
+// - Detect the right key for when the player fires and subsequently the result of what happens when that interacts with an item
 
 // Astronaut window detection
 const width = window.innerWidth;
@@ -168,6 +131,7 @@ class App extends Component {
       top: `${this.state.y}px`,
     };
 
+    // TO DO: five astronauts are being rendered, but they're all stacked on top of each other
     const astronauts = [];
     for (let z = 0; z < 5; z++) {
       astronauts.push(
@@ -184,7 +148,7 @@ class App extends Component {
     return (
       <div>
         <LandingPage />
-        <div>{astronauts}</div>
+        {astronauts}
         {stars}
         <div className="spaceship" style={spaceshipStyle}>
           {this.state.acceleration === true ? (
