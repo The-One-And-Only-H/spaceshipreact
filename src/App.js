@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import LandingPage from './LandingPage';
+import Astronaut from './Astronaut';
 import Star from './Star';
 import Spaceship from './Spaceship';
 import Score from './Score';
-import Astronaut from './Astronaut';
 
 // To do
 // - increment the score only when the player has interacted with specific items in the game
@@ -43,7 +43,6 @@ class App extends Component {
         && astroRect.y > shipRect.top
         && astroRect.y < shipRect.bottom
       ) {
-        // return <Astronaut style="display: none" />;
         console.log('hit');
       }
     }
@@ -70,7 +69,7 @@ class App extends Component {
         <LandingPage />
         {this.state.astronauts}
         {stars}
-        <Spaceship className="spaceship" />
+        <Spaceship />
         <Score />
       </div>
     );
