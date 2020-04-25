@@ -4,7 +4,7 @@ import LandingPage from './LandingPage';
 import Astronaut from './Astronaut';
 import Star from './Star';
 import Spaceship from './Spaceship';
-import Score from './Score';
+// import Score from './Score';
 
 // To do
 // - increment the score only when the player has interacted with specific items in the game
@@ -23,6 +23,7 @@ class App extends Component {
 
     this.state = {
       astronauts,
+      score: 0,
     };
   }
 
@@ -43,6 +44,7 @@ class App extends Component {
         && astroRect.y > shipRect.top
         && astroRect.y < shipRect.bottom
       ) {
+        this.setState(state => ({ score: state.score + 1 }));
         console.log('hit');
       }
     }
@@ -55,7 +57,7 @@ class App extends Component {
   }
 
   componentWillUnmount() {
-    clearInterval();
+    clearInterval(this.state.score);
   }
 
   render() {
@@ -70,7 +72,7 @@ class App extends Component {
         {this.state.astronauts}
         {stars}
         <Spaceship />
-        <Score />
+        <div className="score">{this.state.score}</div>
       </div>
     );
   }
