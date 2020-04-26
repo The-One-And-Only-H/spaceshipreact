@@ -54,6 +54,12 @@ body {
   animation: spin 4s linear infinite;
 }
 
+.asteroid {
+  width: 130px;
+  height: 100px;
+  position: absolute;
+}
+
 @font-face {
   font-family: Retro Computer;
   src: url(./retro_computer_personal_use.ttf) format('truetype');
