@@ -8,7 +8,7 @@ import Spaceship from './Spaceship';
 // import Score from './Score';
 
 // TO DO:
-// - adjust asteroids to render at different y axis each time
+// - adjust astronauts and asteroids to render at different y axis each time
 // - create an intro and outright sequence
 // - detect key for when player fires and blows up asteroid
 
