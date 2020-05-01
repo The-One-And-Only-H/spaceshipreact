@@ -10,7 +10,7 @@ import Spaceship from './Spaceship';
 // TO DO:
 // - adjust asteroids to render at different y axis each time
 // - create an intro and outright sequence
-// - detect the right key for when the player fires and subsequently the result of what happens when that interacts with an item
+// - detect key for when player fires and blows up asteroid
 
 class App extends Component {
   constructor(props) {
