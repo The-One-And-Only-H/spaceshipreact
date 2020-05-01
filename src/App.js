@@ -31,12 +31,14 @@ class App extends Component {
       astronauts,
       asteroids,
       score: 0,
+      display: 'block',
     };
 
-    this.detectCollision = this.detectCollision.bind(this);
+    this.detectAstronaut = this.detectAstronaut.bind(this);
+    this.detectAsteroid = this.detectAsteroid.bind(this);
   }
 
-  detectCollision() {
+  detectAstronaut() {
     const ship = document.getElementsByClassName('spaceship');
     if (ship.length === 0) {
     }
@@ -57,22 +59,32 @@ class App extends Component {
         this.setState(state => ({
           score: state.score + 1,
         }));
-        console.log('Astronaut rescued!');
-        console.log('Astronauts remaining:', this.state.astronauts);
+        // console.log('Astronaut rescued!');
+        // console.log('Astronauts remaining:', this.state.astronauts);
       }
     }
+  }
+
+  detectAsteroid() {
+    const ship = document.getElementsByClassName('spaceship');
+    if (ship.length === 0) {
+    }
+    const shipRect = ship[0].getBoundingClientRect();
+    // console.log('ship:', shipRect);
 
     const aster = document.getElementsByClassName('asteroid');
     for (let y = 0; y < aster.length; y++) {
       const asterRect = aster[y].getBoundingClientRect();
-      // console.log('astro:', astroRect);
+      // console.log('aster:', asterRect);
       if (
         asterRect.x > shipRect.left
         && asterRect.x < shipRect.right
         && asterRect.y > shipRect.top
         && asterRect.y < shipRect.bottom
       ) {
-        // Destroy spaceship here!
+        this.setState({
+          display: 'none',
+        });
         console.log('Critical hit!');
       }
     }
@@ -81,7 +93,8 @@ class App extends Component {
   // TO FIX: increments multiple times on one astronaut
   componentDidMount() {
     setInterval(() => {
-      this.detectCollision();
+      this.detectAstronaut();
+      this.detectAsteroid();
     }, 2000);
   }
 
@@ -90,6 +103,8 @@ class App extends Component {
   }
 
   render() {
+    // console.log(this.state.display);
+
     const stars = [];
     for (let i = 0; i < 50; i++) {
       stars.push(<Star key={i} />);
@@ -98,10 +113,12 @@ class App extends Component {
     return (
       <div>
         <LandingPage />
-        <div detectCollision={this.detectCollision}>{this.state.astronauts}</div>
-        <div detectCollision={this.detectCollision}>{this.state.asteroids}</div>
+        <div detectAstronaut={this.detectAstronaut}>{this.state.astronauts}</div>
+        {this.state.asteroids}
         {stars}
-        <Spaceship />
+        <div detectAsteroid={this.detectAsteroid} style={{ display: `${this.state.display}` }}>
+          <Spaceship />
+        </div>
         <div className="score">{this.state.score}</div>
       </div>
     );
