@@ -8,7 +8,6 @@ import Spaceship from './Spaceship';
 // import Score from './Score';
 
 // TO DO:
-// - decrement the score when the players has interacted with other items in the game
 // - adjust asteroids to render at different y axis each time
 // - create an intro and outright sequence
 // - detect the right key for when the player fires and subsequently the result of what happens when that interacts with an item
@@ -85,7 +84,7 @@ class App extends Component {
         this.setState({
           display: 'none',
         });
-        console.log('Critical hit!');
+        // console.log('Critical hit!');
       }
     }
   }
@@ -103,8 +102,6 @@ class App extends Component {
   }
 
   render() {
-    // console.log(this.state.display);
-
     const stars = [];
     for (let i = 0; i < 50; i++) {
       stars.push(<Star key={i} />);
