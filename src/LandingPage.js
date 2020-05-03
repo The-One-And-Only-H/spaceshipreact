@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { ReactComponent as NBLogo } from './NBLogo.svg';
 
 export default class LandingPage extends Component {
   constructor(props) {
@@ -10,9 +9,11 @@ export default class LandingPage extends Component {
 
   render() {
     return (
-      <>
-        <NBLogo className="Logo" aria-label="Logo" />
-      </>
+      <div className="Text" aria-label="Introduction">
+        <div>Never</div>
+        <div>bland</div>
+        <div>space</div>
+      </div>
     );
   }
 }

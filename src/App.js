@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import LandingPage from './LandingPage';
+import GameOver from './GameOver';
 import Astronaut from './Astronaut';
 import Asteroid from './Asteroid';
 import Star from './Star';
@@ -9,7 +10,7 @@ import Spaceship from './Spaceship';
 
 // TO DO:
 // - adjust astronauts and asteroids to render at different y axis each time
-// - create an intro and outright sequence
+// - create an intro sequence
 // - detect key for when player fires and blows up asteroid
 
 class App extends Component {
@@ -30,7 +31,8 @@ class App extends Component {
       astronauts,
       asteroids,
       score: 0,
-      display: 'block',
+      spaceshipDisplay: 'block',
+      gameOverDisplay: 'none',
     };
 
     this.detectAstronaut = this.detectAstronaut.bind(this);
@@ -82,7 +84,8 @@ class App extends Component {
         && asterRect.y < shipRect.bottom
       ) {
         this.setState({
-          display: 'none',
+          spaceshipDisplay: 'none',
+          gameOverDisplay: 'block',
         });
         // console.log('Critical hit!');
       }
@@ -110,10 +113,19 @@ class App extends Component {
     return (
       <div>
         <LandingPage />
+        <div
+          detectAsteroid={this.detectAsteroid}
+          style={{ display: `${this.state.gameOverDisplay}` }}
+        >
+          <GameOver />
+        </div>
         <div detectAstronaut={this.detectAstronaut}>{this.state.astronauts}</div>
         {this.state.asteroids}
         {stars}
-        <div detectAsteroid={this.detectAsteroid} style={{ display: `${this.state.display}` }}>
+        <div
+          detectAsteroid={this.detectAsteroid}
+          style={{ display: `${this.state.spaceshipDisplay}` }}
+        >
           <Spaceship />
         </div>
         <div className="score">{this.state.score}</div>

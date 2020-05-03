@@ -85,13 +85,17 @@ body {
   }
 }
 
-.Logo {
+.Text {
   width: 100%;
-  fill: white;
   animation: appear 4s linear forwards;
   margin: 0;
   position: absolute;
   top: 265px;
   z-index: 100;
+  font-size: 100px;
+  font-family: Retro Computer;
+  color: white;
+  white-space: nowrap;
 }
+
 
